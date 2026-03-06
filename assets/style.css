@@ -1,0 +1,157 @@
+/* PercoHub — Custom styles (complément Tailwind) */
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #484f58; }
+
+/* ── Service card ─────────────────────────────────────────────────────────── */
+.service-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+.service-card.has-link {
+  cursor: pointer;
+}
+.service-card.has-link:hover {
+  border-color: #484f58;
+  box-shadow: 0 0 0 1px #484f58, 0 4px 16px rgba(0,0,0,0.4);
+  transform: translateY(-1px);
+}
+
+/* Left accent bar */
+.service-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 3px 0 0 3px;
+  background: var(--accent-color, #30363d);
+}
+
+/* ── Category accent colors ────────────────────────────────────────────────── */
+.cat-violet  { --accent-color: #8b5cf6; }
+.cat-slate   { --accent-color: #64748b; }
+.cat-amber   { --accent-color: #f59e0b; }
+.cat-emerald { --accent-color: #10b981; }
+.cat-sky     { --accent-color: #0ea5e9; }
+.cat-orange  { --accent-color: #f97316; }
+.cat-rose    { --accent-color: #f43f5e; }
+
+/* ── Status dot ───────────────────────────────────────────────────────────── */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.status-dot.online  { background: #10b981; box-shadow: 0 0 6px #10b981; }
+.status-dot.offline { background: #ef4444; }
+.status-dot.warn    { background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+.status-dot.loading { background: #4b5563; animation: pulse-dot 1.2s infinite; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ── Status badge ─────────────────────────────────────────────────────────── */
+.badge {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge-green  { background: #10b98120; color: #34d399; border: 1px solid #10b98140; }
+.badge-red    { background: #ef444420; color: #f87171; border: 1px solid #ef444440; }
+.badge-yellow { background: #f59e0b20; color: #fbbf24; border: 1px solid #f59e0b40; }
+.badge-gray   { background: #8b949e20; color: #8b949e; border: 1px solid #8b949e40; }
+.badge-blue   { background: #0ea5e920; color: #38bdf8; border: 1px solid #0ea5e940; }
+
+/* ── Section header ──────────────────────────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #30363d;
+}
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e6edf3;
+}
+.section-count {
+  font-size: 0.75rem;
+  color: #8b949e;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 9999px;
+  padding: 0.1rem 0.55rem;
+}
+
+/* ── Global stats pills ───────────────────────────────────────────────────── */
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid;
+  font-weight: 500;
+}
+
+/* ── Filter button ────────────────────────────────────────────────────────── */
+.filter-btn {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid #30363d;
+  background: transparent;
+  color: #8b949e;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: #8b5cf6;
+  color: #c4b5fd;
+  background: #8b5cf620;
+}
+
+/* ── Note badge ───────────────────────────────────────────────────────────── */
+.note-tag {
+  font-size: 0.6rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: #21262d;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Responsive grid ──────────────────────────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
