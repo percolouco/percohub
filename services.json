@@ -1,0 +1,349 @@
+{
+  "categories": [
+    {
+      "id": "luca",
+      "name": "Projets Luca",
+      "icon": "🛠️",
+      "color": "violet",
+      "services": [
+        {
+          "name": "PercoHub",
+          "desc": "Ce dashboard centralisé",
+          "url": "http://192.168.1.29:9300",
+          "docker": null,
+          "self": true,
+          "tags": ["dashboard"]
+        },
+        {
+          "name": "AgentStats",
+          "desc": "Stats & coûts des agents IA",
+          "url": "http://192.168.1.29:9000",
+          "docker": null,
+          "tags": ["ia", "monitoring"]
+        },
+        {
+          "name": "CronViz",
+          "desc": "Visualisation des cron jobs OpenClaw",
+          "url": "http://192.168.1.29:9100",
+          "docker": null,
+          "tags": ["cron", "monitoring"]
+        },
+        {
+          "name": "MonStatut",
+          "desc": "Monitoring uptime services réseau",
+          "url": "http://192.168.1.29:9200",
+          "docker": null,
+          "tags": ["monitoring"]
+        },
+        {
+          "name": "AgentChat",
+          "desc": "Interface chat avec les agents IA",
+          "url": null,
+          "docker": null,
+          "tags": ["ia", "chat"],
+          "note": "Non démarré — port à définir"
+        },
+        {
+          "name": "HomeStatus",
+          "desc": "Stats système temps réel (CPU, RAM, disques)",
+          "url": null,
+          "docker": null,
+          "tags": ["monitoring", "system"],
+          "note": "Non démarré — port à définir"
+        }
+      ]
+    },
+    {
+      "id": "infra",
+      "name": "Infrastructure",
+      "icon": "🔧",
+      "color": "slate",
+      "services": [
+        {
+          "name": "Portainer",
+          "desc": "Gestion visuelle des conteneurs Docker",
+          "url": "https://portainer.nas.percolouco.com",
+          "docker": "portainer",
+          "tags": ["docker", "admin"]
+        },
+        {
+          "name": "Traefik",
+          "desc": "Reverse proxy — routing & certificats SSL",
+          "url": "http://192.168.1.29:8004",
+          "docker": "traefik",
+          "tags": ["proxy", "ssl"]
+        },
+        {
+          "name": "Grafana",
+          "desc": "Dashboards métriques & visualisation",
+          "url": "http://192.168.1.29:3010",
+          "docker": "grafana",
+          "tags": ["metrics", "monitoring"]
+        },
+        {
+          "name": "InfluxDB",
+          "desc": "Base de données time-series",
+          "url": "http://192.168.1.29:8086",
+          "docker": "influxdb",
+          "tags": ["database", "metrics"]
+        },
+        {
+          "name": "Dashdot",
+          "desc": "Dashboard système moderne (CPU, RAM, réseau)",
+          "url": "http://192.168.1.29:3001",
+          "docker": "dashboard-dash-1",
+          "tags": ["system", "monitoring"]
+        },
+        {
+          "name": "Watchtower",
+          "desc": "Mises à jour automatiques des conteneurs",
+          "url": null,
+          "docker": "watchtower",
+          "tags": ["docker", "updates"]
+        },
+        {
+          "name": "Gitea Runner",
+          "desc": "Runner CI/CD pour Gitea Actions",
+          "url": null,
+          "docker": "gitea-runner",
+          "tags": ["ci-cd"]
+        }
+      ]
+    },
+    {
+      "id": "media",
+      "name": "Média",
+      "icon": "🎬",
+      "color": "amber",
+      "services": [
+        {
+          "name": "Plex",
+          "desc": "Serveur multimédia — films, séries, musique",
+          "url": "http://192.168.1.29:32400/web",
+          "docker": "plex",
+          "tags": ["streaming", "media"]
+        },
+        {
+          "name": "Jellyseerr",
+          "desc": "Demandes de contenu média",
+          "url": "http://192.168.1.29:5055",
+          "docker": "jellyseerr",
+          "tags": ["media", "requests"]
+        },
+        {
+          "name": "Sonarr",
+          "desc": "Gestion automatique des séries TV",
+          "url": "http://192.168.1.29:8989",
+          "docker": "sonarr",
+          "tags": ["tv", "automation"]
+        },
+        {
+          "name": "Radarr",
+          "desc": "Gestion automatique des films",
+          "url": "http://192.168.1.29:7878",
+          "docker": "radarr",
+          "tags": ["movies", "automation"]
+        },
+        {
+          "name": "Lidarr",
+          "desc": "Gestion automatique de la musique",
+          "url": "http://192.168.1.29:8686",
+          "docker": "lidarr",
+          "tags": ["music", "automation"]
+        },
+        {
+          "name": "Prowlarr",
+          "desc": "Gestionnaire d'indexeurs",
+          "url": "http://192.168.1.29:9696",
+          "docker": "prowlarr",
+          "tags": ["indexer"]
+        },
+        {
+          "name": "Jackett",
+          "desc": "Proxy indexeurs torrents",
+          "url": "http://192.168.1.29:9117",
+          "docker": "jackett",
+          "tags": ["indexer", "torrent"]
+        },
+        {
+          "name": "qBittorrent",
+          "desc": "Client torrent (via VPN Gluetun)",
+          "url": "http://192.168.1.29:1234",
+          "docker": "qbittorrent",
+          "tags": ["torrent", "vpn"]
+        },
+        {
+          "name": "Pinchflat",
+          "desc": "Téléchargement automatique YouTube",
+          "url": "http://192.168.1.29:8945",
+          "docker": "pinchflat-pinchflat-1",
+          "tags": ["youtube", "download"]
+        },
+        {
+          "name": "Tautulli",
+          "desc": "Statistiques et monitoring Plex",
+          "url": "http://192.168.1.29:8181",
+          "docker": "tautulli",
+          "tags": ["plex", "stats"]
+        },
+        {
+          "name": "FlareSolverr",
+          "desc": "Bypass Cloudflare pour indexeurs",
+          "url": "http://192.168.1.29:8191",
+          "docker": "flaresolverr",
+          "tags": ["proxy"]
+        }
+      ]
+    },
+    {
+      "id": "domotique",
+      "name": "Domotique",
+      "icon": "🏠",
+      "color": "emerald",
+      "services": [
+        {
+          "name": "Home Assistant",
+          "desc": "Plateforme domotique centrale",
+          "url": "http://192.168.1.29:8123",
+          "docker": "homeassistant",
+          "tags": ["domotique", "automation"]
+        },
+        {
+          "name": "ESPhome",
+          "desc": "Firmware & gestion des devices ESP",
+          "url": null,
+          "docker": "esphome",
+          "tags": ["esp", "firmware"]
+        },
+        {
+          "name": "Syncthing",
+          "desc": "Synchronisation de fichiers P2P",
+          "url": "http://192.168.1.29:8384",
+          "docker": "syncthing",
+          "tags": ["sync", "files"]
+        },
+        {
+          "name": "Grott",
+          "desc": "Monitoring panneaux solaires Growatt",
+          "url": "http://192.168.1.29:5279",
+          "docker": "grott",
+          "tags": ["solar", "energy"]
+        },
+        {
+          "name": "Bresser Live",
+          "desc": "Station météo Bresser en temps réel",
+          "url": "http://192.168.1.29:8887",
+          "docker": "bresser-live",
+          "tags": ["weather", "sensors"]
+        },
+        {
+          "name": "Mosquitto",
+          "desc": "Broker MQTT",
+          "url": null,
+          "docker": "mosquitto",
+          "tags": ["mqtt", "iot"]
+        }
+      ]
+    },
+    {
+      "id": "productivite",
+      "name": "Productivité",
+      "icon": "💼",
+      "color": "sky",
+      "services": [
+        {
+          "name": "Nextcloud",
+          "desc": "Cloud personnel — fichiers, calendrier, contacts",
+          "url": "http://192.168.1.29:8080",
+          "docker": "nextcloud",
+          "tags": ["cloud", "files"]
+        },
+        {
+          "name": "Gitea",
+          "desc": "Hébergement Git self-hosted",
+          "url": "http://192.168.1.29:3500",
+          "docker": "gitea",
+          "tags": ["git", "dev"]
+        },
+        {
+          "name": "VSCode",
+          "desc": "Éditeur de code dans le navigateur",
+          "url": "http://192.168.1.29:8888",
+          "docker": "vscode",
+          "tags": ["dev", "editor"]
+        },
+        {
+          "name": "Planka",
+          "desc": "Gestion de projets Kanban",
+          "url": "https://planka.nas.percolouco.com",
+          "docker": "planka",
+          "tags": ["kanban", "projects"]
+        },
+        {
+          "name": "Actual Budget",
+          "desc": "Gestion budget personnel",
+          "url": "http://192.168.1.29:5006",
+          "docker": "actual-server",
+          "tags": ["finance", "budget"]
+        },
+        {
+          "name": "CronMaster",
+          "desc": "Gestionnaire de tâches cron",
+          "url": "http://192.168.1.29:40123",
+          "docker": "cronmaster",
+          "tags": ["cron", "scheduler"]
+        },
+        {
+          "name": "Homarr",
+          "desc": "Dashboard de démarrage alternatif",
+          "url": "http://192.168.1.29:7575",
+          "docker": "homarr",
+          "tags": ["dashboard"]
+        }
+      ]
+    },
+    {
+      "id": "vpn",
+      "name": "VPN Firefox",
+      "icon": "🦊",
+      "color": "orange",
+      "services": [
+        {
+          "name": "Firefox — retak",
+          "desc": "Instance Firefox via VPN Gluetun",
+          "url": "http://192.168.1.29:3000",
+          "docker": "vpn_mh_retak",
+          "tags": ["vpn", "browser"]
+        },
+        {
+          "name": "Firefox — coucouze",
+          "desc": "Instance Firefox via VPN Gluetun",
+          "url": "http://192.168.1.29:3100",
+          "docker": "vpn_mh_coucouze",
+          "tags": ["vpn", "browser"]
+        },
+        {
+          "name": "Firefox — roxxor",
+          "desc": "Instance Firefox via VPN Gluetun",
+          "url": "http://192.168.1.29:3200",
+          "docker": "vpn_mh_roxxor",
+          "tags": ["vpn", "browser"]
+        },
+        {
+          "name": "Firefox — xouz",
+          "desc": "Instance Firefox via VPN Gluetun",
+          "url": "http://192.168.1.29:3300",
+          "docker": "vpn_mh_xouz",
+          "tags": ["vpn", "browser"]
+        },
+        {
+          "name": "Firefox — nale",
+          "desc": "Instance Firefox via VPN Gluetun",
+          "url": "http://192.168.1.29:3400",
+          "docker": "vpn_mh_nale",
+          "tags": ["vpn", "browser"]
+        }
+      ]
+    }
+  ]
+}
