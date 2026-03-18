@@ -155,3 +155,43 @@
 @media (max-width: 640px) {
   .services-grid { grid-template-columns: 1fr; }
 }
+
+/* ── App cards (section Mes Apps) ─────────────────────────────────────────── */
+.app-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.app-card:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+  transform: translateY(-2px);
+}
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #c4b5fd;
+  background: #8b5cf610;
+  border: 1px solid #8b5cf630;
+  border-radius: 0.5rem;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.app-btn:hover {
+  background: #8b5cf620;
+  border-color: #8b5cf6;
+  color: #e9d5ff;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+}

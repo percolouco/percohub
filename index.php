@@ -54,6 +54,112 @@
   <!-- ── Main ───────────────────────────────────────────────────────────────── -->
   <main class="max-w-[1600px] mx-auto px-4 py-6">
 
+    <!-- ── Mes Applications ────────────────────────────────────────────────────── -->
+    <section class="mb-10">
+      <!-- En-tête de section -->
+      <div class="section-header">
+        <h2 class="section-title">🚀 Mes Applications</h2>
+        <span class="section-count">4</span>
+      </div>
+
+      <!-- Grille des applications -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- App 1: CronHub -->
+        <div class="app-card group">
+          <div class="flex flex-col h-full">
+            <!-- Icône & Titre -->
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">⏰</span>
+              <h3 class="text-base font-bold text-white">CronHub</h3>
+            </div>
+            
+            <!-- Description -->
+            <p class="text-sm text-gray-400 mb-4 flex-grow">
+              Gestionnaire de cron jobs
+            </p>
+            
+            <!-- Bouton -->
+            <a href="https://cronhub.nas.percolouco.com" target="_blank" rel="noopener noreferrer"
+               class="app-btn">
+              Ouvrir
+              <span class="text-xs">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App 2: GarageManager -->
+        <div class="app-card group">
+          <div class="flex flex-col h-full">
+            <!-- Icône & Titre -->
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">🚗</span>
+              <h3 class="text-base font-bold text-white">GarageManager</h3>
+            </div>
+            
+            <!-- Description -->
+            <p class="text-sm text-gray-400 mb-4 flex-grow">
+              Gestion véhicules & entretiens
+            </p>
+            
+            <!-- Bouton -->
+            <a href="https://garage.nas.percolouco.com" target="_blank" rel="noopener noreferrer"
+               class="app-btn">
+              Ouvrir
+              <span class="text-xs">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App 3: PercoMemo -->
+        <div class="app-card group">
+          <div class="flex flex-col h-full">
+            <!-- Icône & Titre -->
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">📝</span>
+              <h3 class="text-base font-bold text-white">PercoMemo</h3>
+            </div>
+            
+            <!-- Description -->
+            <p class="text-sm text-gray-400 mb-4 flex-grow">
+              Mémos & notes
+            </p>
+            
+            <!-- Bouton -->
+            <a href="http://192.168.1.29:9400" target="_blank" rel="noopener noreferrer"
+               class="app-btn">
+              Ouvrir
+              <span class="text-xs">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App 4: Planka -->
+        <div class="app-card group">
+          <div class="flex flex-col h-full">
+            <!-- Icône & Titre -->
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">📋</span>
+              <h3 class="text-base font-bold text-white">Planka</h3>
+            </div>
+            
+            <!-- Description -->
+            <p class="text-sm text-gray-400 mb-4 flex-grow">
+              Kanban & projets
+            </p>
+            
+            <!-- Bouton -->
+            <a href="https://planka.nas.percolouco.com" target="_blank" rel="noopener noreferrer"
+               class="app-btn">
+              Ouvrir
+              <span class="text-xs">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Loader -->
     <div id="loader" class="flex flex-col items-center justify-center py-24 gap-4">
       <div class="w-8 h-8 border-4 border-violet-500 border-t-transparent rounded-full animate-spin"></div>
