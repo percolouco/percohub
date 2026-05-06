@@ -41,6 +41,34 @@
           "url": "https://garage.nas.percolouco.com",
           "docker": "garagemanager",
           "tags": ["vehicules", "maintenance"]
+        },
+        {
+          "name": "PercoMemo",
+          "desc": "Notes et mémos multimédia (texte, images, liens, markdown)",
+          "url": "https://memo.nas.percolouco.com",
+          "docker": "percomemo",
+          "tags": ["notes", "memo"]
+        },
+        {
+          "name": "PrintVault",
+          "desc": "Gestionnaire fichiers d'impression 3D (STL, 3MF, GCode + viewer)",
+          "url": "https://printvault.nas.percolouco.com",
+          "docker": "printvault",
+          "tags": ["3d", "impression"]
+        },
+        {
+          "name": "HomeStatus",
+          "desc": "Dashboard temps réel système — CPU, RAM, disques, uptime",
+          "url": "http://192.168.1.29:9200",
+          "docker": null,
+          "tags": ["monitoring", "system"]
+        },
+        {
+          "name": "MonStatut",
+          "desc": "Page de statut des services homelab",
+          "url": "http://192.168.1.29:9201",
+          "docker": null,
+          "tags": ["monitoring", "status"]
         }
       ]
     },
