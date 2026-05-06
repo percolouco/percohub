@@ -185,13 +185,6 @@
           "tags": ["torrent", "vpn"]
         },
         {
-          "name": "Tautulli",
-          "desc": "Statistiques et monitoring Plex",
-          "url": "http://192.168.1.29:8181",
-          "docker": "tautulli",
-          "tags": ["plex", "stats"]
-        },
-        {
           "name": "FlareSolverr",
           "desc": "Bypass Cloudflare pour indexeurs",
           "url": "http://192.168.1.29:8191",
@@ -290,13 +283,6 @@
           "url": "http://192.168.1.29:5006",
           "docker": "actual-server",
           "tags": ["finance", "budget"]
-        },
-        {
-          "name": "Homarr",
-          "desc": "Dashboard de démarrage alternatif",
-          "url": "http://192.168.1.29:7575",
-          "docker": "homarr",
-          "tags": ["dashboard"]
         }
       ]
     },
