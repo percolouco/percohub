@@ -59,7 +59,7 @@
       <!-- En-tête de section -->
       <div class="section-header">
         <h2 class="section-title">🚀 Mes Applications</h2>
-        <span class="section-count">5</span>
+        <span class="section-count">6</span>
       </div>
 
       <!-- Grille des applications -->
@@ -157,7 +157,30 @@
           </div>
         </div>
 
-        <!-- App 5: PrintVault -->
+        <!-- App 5: Todo / Mémos -->
+        <div class="app-card group">
+          <div class="flex flex-col h-full">
+            <!-- Icône & Titre -->
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">✅</span>
+              <h3 class="text-base font-bold text-white">Todo / Mémos</h3>
+            </div>
+
+            <!-- Description -->
+            <p class="text-sm text-gray-400 mb-4 flex-grow">
+              Mémos & rappels via Discord
+            </p>
+
+            <!-- Bouton -->
+            <a href="https://todo.nas.percolouco.com" target="_blank" rel="noopener noreferrer"
+               class="app-btn">
+              Ouvrir
+              <span class="text-xs">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App 6: PrintVault -->
         <div class="app-card group">
           <div class="flex flex-col h-full">
             <!-- Icône & Titre -->
