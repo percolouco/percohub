@@ -59,7 +59,7 @@
       <!-- En-tête de section -->
       <div class="section-header">
         <h2 class="section-title">🚀 Mes Applications</h2>
-        <span class="section-count">4</span>
+        <span class="section-count">5</span>
       </div>
 
       <!-- Grille des applications -->
@@ -119,14 +119,14 @@
               <span class="text-3xl">📝</span>
               <h3 class="text-base font-bold text-white">PercoMemo</h3>
             </div>
-            
+
             <!-- Description -->
             <p class="text-sm text-gray-400 mb-4 flex-grow">
-              Mémos & notes
+              Mémos & notes multimédia
             </p>
-            
+
             <!-- Bouton -->
-            <a href="http://192.168.1.29:9400" target="_blank" rel="noopener noreferrer"
+            <a href="https://memo.nas.percolouco.com" target="_blank" rel="noopener noreferrer"
                class="app-btn">
               Ouvrir
               <span class="text-xs">→</span>
@@ -142,14 +142,37 @@
               <span class="text-3xl">📋</span>
               <h3 class="text-base font-bold text-white">Planka</h3>
             </div>
-            
+
             <!-- Description -->
             <p class="text-sm text-gray-400 mb-4 flex-grow">
               Kanban & projets
             </p>
-            
+
             <!-- Bouton -->
             <a href="https://planka.nas.percolouco.com" target="_blank" rel="noopener noreferrer"
+               class="app-btn">
+              Ouvrir
+              <span class="text-xs">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App 5: PrintVault -->
+        <div class="app-card group">
+          <div class="flex flex-col h-full">
+            <!-- Icône & Titre -->
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">🖨️</span>
+              <h3 class="text-base font-bold text-white">PrintVault</h3>
+            </div>
+
+            <!-- Description -->
+            <p class="text-sm text-gray-400 mb-4 flex-grow">
+              Fichiers 3D (STL, GCode)
+            </p>
+
+            <!-- Bouton -->
+            <a href="https://printvault.nas.percolouco.com" target="_blank" rel="noopener noreferrer"
                class="app-btn">
               Ouvrir
               <span class="text-xs">→</span>
