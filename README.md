@@ -90,6 +90,6 @@ Dans `services.json`, ajouter dans le tableau `categories` :
 | 🛠️ Projets Luca | AgentStats, CronViz, MonStatut, AgentChat, HomeStatus |
 | 🔧 Infrastructure | Portainer, Traefik, Grafana, InfluxDB, Dashdot, Watchtower |
 | 🎬 Média | Plex, Jellyseerr, Sonarr, Radarr, Lidarr, Prowlarr, Jackett, qBittorrent, Pinchflat, Tautulli |
-| 🏠 Domotique | Home Assistant, ESPhome, Syncthing, Grott, Bresser Live, Mosquitto |
+| 🏠 Domotique | Home Assistant, ESPhome, Syncthing, Grott, Bresser Live, Mosquitto, Frigate |
 | 💼 Productivité | Nextcloud, Gitea, VSCode, Planka, Actual Budget, CronMaster, Homarr |
 | 🦊 VPN Firefox | retak, coucouze, roxxor, xouz, nale |
