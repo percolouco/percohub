@@ -240,6 +240,13 @@
           "url": null,
           "docker": "mosquitto",
           "tags": ["mqtt", "iot"]
+        },
+        {
+          "name": "Frigate",
+          "desc": "NVR surveillance — détection véhicules & lecture plaques (LPR)",
+          "url": "https://frigate.nas.percolouco.com",
+          "docker": "frigate",
+          "tags": ["camera", "surveillance", "lpr"]
         }
       ]
     },
