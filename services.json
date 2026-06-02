@@ -247,6 +247,13 @@
           "url": "https://frigate.nas.percolouco.com",
           "docker": "frigate",
           "tags": ["camera", "surveillance", "lpr"]
+        },
+        {
+          "name": "CamWatch",
+          "desc": "Rapport des passages véhicules — plaque, couleur, snapshot",
+          "url": "https://camwatch.nas.percolouco.com",
+          "docker": "camwatch",
+          "tags": ["camera", "surveillance", "lpr", "rapport"]
         }
       ]
     },
