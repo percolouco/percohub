@@ -20,7 +20,7 @@ nohup php -S 0.0.0.0:9300 -t /home/perco/projects/percohub/ > /tmp/percohub-php.
 
 - ✅ Vue centralisée de tous les services (Docker + projets PHP)
 - ✅ Status live (Docker inspect + HTTP ping)
-- ✅ Catégories : Projets Luca / Infrastructure / Média / Domotique / Productivité / VPN Firefox
+- ✅ Catégories : Mes Projets / Infrastructure / Média / Domotique / Productivité / VPN Firefox
 - ✅ Filtre par catégorie (navbar)
 - ✅ Stats globales (online/offline)
 - ✅ Auto-refresh toutes les 30s
@@ -87,9 +87,9 @@ Dans `services.json`, ajouter dans le tableau `categories` :
 
 | Catégorie | Services |
 |-----------|----------|
-| 🛠️ Projets Luca | AgentStats, CronViz, MonStatut, AgentChat, HomeStatus |
-| 🔧 Infrastructure | Portainer, Traefik, Grafana, InfluxDB, Dashdot, Watchtower |
-| 🎬 Média | Plex, Jellyseerr, Sonarr, Radarr, Lidarr, Prowlarr, Jackett, qBittorrent, Pinchflat, Tautulli |
+| 🛠️ Mes Projets | PercoHub, CronHub, Todo / Mémos, LocOutil, GarageManager, PercoMemo, PrintVault |
+| 🔧 Infrastructure | Portainer, Traefik, Grafana, InfluxDB, HomelabDash, Gitea, Gitea Runner, Watchtower, CronMaster |
+| 🎬 Média | Plex, Jellyseerr, Sonarr, Radarr, Lidarr, Prowlarr, Jackett, qBittorrent, FlareSolverr |
 | 🏠 Domotique | Home Assistant, ESPhome, Syncthing, Grott, Bresser Live, Mosquitto, Frigate, CamWatch |
-| 💼 Productivité | Nextcloud, Gitea, VSCode, Planka, Actual Budget, CronMaster, Homarr |
-| 🦊 VPN Firefox | retak, coucouze, roxxor, xouz, nale |
+| 💼 Productivité | Immich, Nextcloud, VSCode, Planka, Actual Budget |
+| 🦊 VPN Firefox | Firefox — retak, Firefox — coucouze, Firefox — roxxor, Firefox — xouz, Firefox — nale |

@@ -93,6 +93,13 @@
           "tags": ["database", "metrics"]
         },
         {
+          "name": "HomelabDash",
+          "desc": "Dashboard système — CPU, RAM, disques, RAID, réseau par IP, appareils LAN",
+          "url": "https://homelabdash.nas.percolouco.com",
+          "docker": "homelabdash",
+          "tags": ["monitoring", "dashboard"]
+        },
+        {
           "name": "Gitea",
           "desc": "Hébergement Git self-hosted",
           "url": "http://192.168.1.29:3500",
