@@ -87,9 +87,9 @@ Dans `services.json`, ajouter dans le tableau `categories` :
 
 | Catégorie | Services |
 |-----------|----------|
-| 🛠️ Mes Projets | PercoHub, CronHub, Todo / Mémos, LocOutil, GarageManager, PercoMemo, PrintVault |
-| 🔧 Infrastructure | Portainer, Traefik, Grafana, InfluxDB, HomelabDash, Gitea, Gitea Runner, Watchtower, CronMaster |
-| 🎬 Média | Plex, Jellyseerr, Sonarr, Radarr, Lidarr, Prowlarr, Jackett, qBittorrent, FlareSolverr |
-| 🏠 Domotique | Home Assistant, ESPhome, Syncthing, Grott, Bresser Live, Mosquitto, Frigate, CamWatch |
-| 💼 Productivité | Immich, Nextcloud, VSCode, Planka, Actual Budget |
+| 🛠️ Mes Projets | PercoHub, CronHub, Todo / Mémos, LocOutil, PercoMemo, PrintVault, MountyCrawl, PercoVitrine |
+| 🔧 Infrastructure | Portainer, Traefik, Grafana, InfluxDB, HomelabDash, Gitea, Gitea Runner, Watchtower, CronMaster, phpMyAdmin |
+| 🎬 Média | Plex, Jellyseerr, Sonarr, Radarr, Lidarr, Prowlarr, Jackett, qBittorrent, FlareSolverr, Pinchflat |
+| 🏠 Domotique | Home Assistant, HouseHub, ESPhome, Syncthing, InvRaw, Bresser Live, Mosquitto, CamWatch |
+| 💼 Productivité | Immich, Nextcloud, VSCode, Planka |
 | 🦊 VPN Firefox | Firefox — retak, Firefox — coucouze, Firefox — roxxor, Firefox — xouz, Firefox — nale |

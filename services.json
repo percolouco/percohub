@@ -25,7 +25,7 @@
           "name": "Todo / Mémos",
           "desc": "Mémos et rappels quotidiens via Discord",
           "url": "https://todo.nas.percolouco.com",
-          "docker": "memo",
+          "docker": "percomemo",
           "tags": ["todo", "rappels"]
         },
         {
@@ -34,13 +34,6 @@
           "url": "https://locoutil.nas.percolouco.com",
           "docker": "locoutil",
           "tags": ["location", "outils"]
-        },
-        {
-          "name": "GarageManager",
-          "desc": "Gestion entretiens & pièces véhicules",
-          "url": "https://garage.nas.percolouco.com",
-          "docker": "garagemanager",
-          "tags": ["vehicules", "maintenance"]
         },
         {
           "name": "PercoMemo",
@@ -55,6 +48,20 @@
           "url": "https://printvault.nas.percolouco.com",
           "docker": "printvault",
           "tags": ["3d", "impression"]
+        },
+        {
+          "name": "MountyCrawl",
+          "desc": "Jeu roguelike hommage à MountyHall — solo & monde partagé",
+          "url": "https://mountycrawl.nas.percolouco.com",
+          "docker": "mountycrawl",
+          "tags": ["jeu", "roguelike"]
+        },
+        {
+          "name": "PercoVitrine",
+          "desc": "Site vitrine personnel",
+          "url": "https://vitrine.nas.percolouco.com",
+          "docker": "percovitrine",
+          "tags": ["vitrine", "web"]
         }
       ]
     },
@@ -126,6 +133,13 @@
           "url": "http://192.168.1.29:40123",
           "docker": "cronmaster",
           "tags": ["cron", "scheduler"]
+        },
+        {
+          "name": "phpMyAdmin",
+          "desc": "Interface web d'administration des bases de données",
+          "url": "https://phpmyadmin.nas.percolouco.com",
+          "docker": "phpmyadmin",
+          "tags": ["database", "admin"]
         }
       ]
     },
@@ -197,6 +211,13 @@
           "url": "http://192.168.1.29:8191",
           "docker": "flaresolverr",
           "tags": ["proxy"]
+        },
+        {
+          "name": "Pinchflat",
+          "desc": "Gestionnaire de téléchargement YouTube / canaux vidéo",
+          "url": "http://192.168.1.29:8945",
+          "docker": "pinchflat-pinchflat-1",
+          "tags": ["youtube", "media", "download"]
         }
       ]
     },
@@ -214,6 +235,13 @@
           "tags": ["domotique", "automation"]
         },
         {
+          "name": "HouseHub",
+          "desc": "Gestion domotique familiale",
+          "url": "https://househub.nas.percolouco.com",
+          "docker": "househub",
+          "tags": ["domotique", "famille"]
+        },
+        {
           "name": "ESPhome",
           "desc": "Firmware & gestion des devices ESP",
           "url": null,
@@ -228,10 +256,10 @@
           "tags": ["sync", "files"]
         },
         {
-          "name": "Grott",
-          "desc": "Monitoring panneaux solaires Growatt",
-          "url": "http://192.168.1.29:5279",
-          "docker": "grott",
+          "name": "InvRaw",
+          "desc": "Proxy données brutes panneaux solaires Growatt",
+          "url": "https://invraw.nas.percolouco.com",
+          "docker": "invraw",
           "tags": ["solar", "energy"]
         },
         {
@@ -247,13 +275,6 @@
           "url": null,
           "docker": "mosquitto",
           "tags": ["mqtt", "iot"]
-        },
-        {
-          "name": "Frigate",
-          "desc": "NVR surveillance — détection véhicules & lecture plaques (LPR)",
-          "url": "https://frigate.nas.percolouco.com",
-          "docker": "frigate",
-          "tags": ["camera", "surveillance", "lpr"]
         },
         {
           "name": "CamWatch",
@@ -297,13 +318,6 @@
           "url": "https://planka.nas.percolouco.com",
           "docker": "planka",
           "tags": ["kanban", "projects"]
-        },
-        {
-          "name": "Actual Budget",
-          "desc": "Gestion budget personnel",
-          "url": "http://192.168.1.29:5006",
-          "docker": "actual-server",
-          "tags": ["finance", "budget"]
         }
       ]
     },
