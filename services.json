@@ -57,6 +57,13 @@
           "tags": ["jeu", "roguelike"]
         },
         {
+          "name": "IPTV Viewer",
+          "desc": "Lecture IPTV (M3U_plus) — catégories, EPG, monitoring du flux, admin/viewer séparés",
+          "url": "https://iptv.nas.percolouco.com",
+          "docker": "iptv-viewer",
+          "tags": ["iptv", "streaming"]
+        },
+        {
           "name": "PercoVitrine",
           "desc": "Site vitrine personnel",
           "url": "https://vitrine.nas.percolouco.com",
