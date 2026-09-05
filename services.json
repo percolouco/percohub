@@ -43,6 +43,13 @@
           "tags": ["notes", "memo"]
         },
         {
+          "name": "Cartes de fidélité",
+          "desc": "PWA offline pour scanner et stocker les cartes de fidélité (fonctionne sans réseau)",
+          "url": "https://cartes.nas.percolouco.com",
+          "docker": "cartes-fidelite",
+          "tags": ["pwa", "offline", "fidélité"]
+        },
+        {
           "name": "PrintVault",
           "desc": "Gestionnaire fichiers d'impression 3D (STL, 3MF, GCode + viewer) + calculateur de prix",
           "url": "https://printvault.nas.percolouco.com",
