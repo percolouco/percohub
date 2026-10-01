@@ -91,5 +91,5 @@ Dans `services.json`, ajouter dans le tableau `categories` :
 | 🔧 Infrastructure | Portainer, Traefik, Grafana, InfluxDB, HomelabDash, Gitea, Gitea Runner, Watchtower, CronMaster, phpMyAdmin |
 | 🎬 Média | Plex, Jellyseerr, Sonarr, Radarr, Lidarr, Prowlarr, Jackett, qBittorrent, FlareSolverr, Pinchflat |
 | 🏠 Domotique | Home Assistant, HouseHub, ESPhome, Syncthing, InvRaw, Bresser Live, Mosquitto, CamWatch |
-| 💼 Productivité | Immich, Nextcloud, VSCode, Planka |
+| 💼 Productivité | Immich, Nextcloud, VSCode, Planka, Paperless-ngx |
 | 🦊 VPN Firefox | Firefox — retak, Firefox — coucouze, Firefox — roxxor, Firefox — xouz, Firefox — nale |

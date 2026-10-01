@@ -332,6 +332,13 @@
           "url": "https://planka.nas.percolouco.com",
           "docker": "planka",
           "tags": ["kanban", "projects"]
+        },
+        {
+          "name": "Paperless-ngx",
+          "desc": "Gestion électronique de documents (OCR, factures, impôts)",
+          "url": "https://paperless.nas.percolouco.com",
+          "docker": "paperless",
+          "tags": ["documents", "ocr", "factures"]
         }
       ]
     },
