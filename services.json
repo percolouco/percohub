@@ -12,70 +12,122 @@
           "url": "https://percohub.nas.percolouco.com",
           "docker": "percohub",
           "self": true,
-          "tags": ["dashboard"]
+          "tags": [
+            "dashboard"
+          ]
         },
         {
           "name": "CronHub",
           "desc": "Gestionnaire visuel de cron jobs",
           "url": "https://cronhub.nas.percolouco.com",
           "docker": "cronhub",
-          "tags": ["cron", "scheduler"]
+          "tags": [
+            "cron",
+            "scheduler"
+          ]
         },
         {
           "name": "Todo / Mémos",
           "desc": "Mémos et rappels quotidiens via Discord",
           "url": "https://todo.nas.percolouco.com",
           "docker": "percomemo",
-          "tags": ["todo", "rappels"]
+          "tags": [
+            "todo",
+            "rappels"
+          ]
         },
         {
           "name": "LocOutil",
           "desc": "Gestion de location d'outils",
           "url": "https://locoutil.nas.percolouco.com",
           "docker": "locoutil",
-          "tags": ["location", "outils"]
+          "tags": [
+            "location",
+            "outils"
+          ]
         },
         {
           "name": "PercoMemo",
           "desc": "Notes et mémos multimédia (texte, images, liens, markdown)",
           "url": "https://memo.nas.percolouco.com",
           "docker": "percomemo",
-          "tags": ["notes", "memo"]
+          "tags": [
+            "notes",
+            "memo"
+          ]
         },
         {
           "name": "Cartes de fidélité",
           "desc": "PWA offline pour scanner et stocker les cartes de fidélité (fonctionne sans réseau)",
           "url": "https://cartes.nas.percolouco.com",
           "docker": "cartes-fidelite",
-          "tags": ["pwa", "offline", "fidélité"]
+          "tags": [
+            "pwa",
+            "offline",
+            "fidélité"
+          ]
         },
         {
           "name": "PrintVault",
           "desc": "Gestionnaire fichiers d'impression 3D (STL, 3MF, GCode + viewer) + calculateur de prix",
           "url": "https://printvault.nas.percolouco.com",
           "docker": "printvault",
-          "tags": ["3d", "impression", "prix"]
+          "tags": [
+            "3d",
+            "impression",
+            "prix"
+          ]
+        },
+        {
+          "name": "Orca Web",
+          "desc": "OrcaSlicer dans le navigateur : découpe, QIDI Box multi-couleur, envoi et suivi d'impression sur la QIDI",
+          "url": "https://orca.nas.percolouco.com",
+          "docker": "orca-web",
+          "tags": [
+            "3d",
+            "impression",
+            "slicer"
+          ]
+        },
+        {
+          "name": "OrcaSlicer complet",
+          "desc": "Application OrcaSlicer complète à distance (bureau dans le navigateur)",
+          "url": "https://orca-full.nas.percolouco.com",
+          "docker": "orcaslicer",
+          "tags": [
+            "3d",
+            "slicer"
+          ]
         },
         {
           "name": "MountyCrawl",
           "desc": "Jeu roguelike hommage à MountyHall — solo & monde partagé",
           "url": "https://mountycrawl.nas.percolouco.com",
           "docker": "mountycrawl",
-          "tags": ["jeu", "roguelike"]
+          "tags": [
+            "jeu",
+            "roguelike"
+          ]
         },
         {
           "name": "IPTV Viewer",
           "desc": "Lecture IPTV (M3U_plus) — catégories, EPG, monitoring du flux, admin/viewer séparés",
           "url": "https://iptv.nas.percolouco.com",
           "docker": "iptv-viewer",
-          "tags": ["iptv", "streaming"]
+          "tags": [
+            "iptv",
+            "streaming"
+          ]
         },
         {
           "name": "PercoVitrine",
           "desc": "Site vitrine personnel",
           "url": "https://vitrine.nas.percolouco.com",
           "docker": "percovitrine",
-          "tags": ["vitrine", "web"]
+          "tags": [
+            "vitrine",
+            "web"
+          ]
         }
       ]
     },
@@ -90,70 +142,99 @@
           "desc": "Gestion visuelle des conteneurs Docker",
           "url": "https://portainer.nas.percolouco.com",
           "docker": "portainer",
-          "tags": ["docker", "admin"]
+          "tags": [
+            "docker",
+            "admin"
+          ]
         },
         {
           "name": "Traefik",
           "desc": "Reverse proxy — routing & certificats SSL",
           "url": "http://192.168.1.29:8004",
           "docker": "traefik",
-          "tags": ["proxy", "ssl"]
+          "tags": [
+            "proxy",
+            "ssl"
+          ]
         },
         {
           "name": "Grafana",
           "desc": "Dashboards métriques & visualisation",
           "url": "http://192.168.1.29:3010",
           "docker": "grafana",
-          "tags": ["metrics", "monitoring"]
+          "tags": [
+            "metrics",
+            "monitoring"
+          ]
         },
         {
           "name": "InfluxDB",
           "desc": "Base de données time-series",
           "url": "http://192.168.1.29:8086",
           "docker": "influxdb",
-          "tags": ["database", "metrics"]
+          "tags": [
+            "database",
+            "metrics"
+          ]
         },
         {
           "name": "HomelabDash",
           "desc": "Dashboard système — CPU, RAM, disques, RAID, réseau par IP, appareils LAN",
           "url": "https://homelabdash.nas.percolouco.com",
           "docker": "homelabdash",
-          "tags": ["monitoring", "dashboard"]
+          "tags": [
+            "monitoring",
+            "dashboard"
+          ]
         },
         {
           "name": "Gitea",
           "desc": "Hébergement Git self-hosted",
           "url": "http://192.168.1.29:3500",
           "docker": "gitea",
-          "tags": ["git", "dev"]
+          "tags": [
+            "git",
+            "dev"
+          ]
         },
         {
           "name": "Gitea Runner",
           "desc": "Runner CI/CD pour Gitea Actions",
           "url": null,
           "docker": "gitea-runner",
-          "tags": ["ci-cd"]
+          "tags": [
+            "ci-cd"
+          ]
         },
         {
           "name": "Watchtower",
           "desc": "Mises à jour automatiques des conteneurs",
           "url": null,
           "docker": "watchtower",
-          "tags": ["docker", "updates"]
+          "tags": [
+            "docker",
+            "updates"
+          ]
         },
         {
           "name": "CronMaster",
           "desc": "Gestionnaire de tâches cron",
           "url": "http://192.168.1.29:40123",
           "docker": "cronmaster",
-          "tags": ["cron", "scheduler"]
+          "tags": [
+            "cron",
+            "scheduler"
+          ]
         },
         {
           "name": "phpMyAdmin",
           "desc": "Interface web d'administration des bases de données",
           "url": "https://phpmyadmin.nas.percolouco.com",
           "docker": "phpmyadmin",
-          "tags": ["database", "admin"]
+          "tags": [
+            "database",
+            "admin"
+          ]
         }
       ]
     },
@@ -168,70 +249,99 @@
           "desc": "Serveur multimédia — films, séries, musique",
           "url": "http://192.168.1.29:32400/web",
           "docker": "plex",
-          "tags": ["streaming", "media"]
+          "tags": [
+            "streaming",
+            "media"
+          ]
         },
         {
           "name": "Jellyseerr",
           "desc": "Demandes de contenu média",
           "url": "http://192.168.1.29:5055",
           "docker": "jellyseerr",
-          "tags": ["media", "requests"]
+          "tags": [
+            "media",
+            "requests"
+          ]
         },
         {
           "name": "Sonarr",
           "desc": "Gestion automatique des séries TV",
           "url": "http://192.168.1.29:8989",
           "docker": "sonarr",
-          "tags": ["tv", "automation"]
+          "tags": [
+            "tv",
+            "automation"
+          ]
         },
         {
           "name": "Radarr",
           "desc": "Gestion automatique des films",
           "url": "http://192.168.1.29:7878",
           "docker": "radarr",
-          "tags": ["movies", "automation"]
+          "tags": [
+            "movies",
+            "automation"
+          ]
         },
         {
           "name": "Lidarr",
           "desc": "Gestion automatique de la musique",
           "url": "http://192.168.1.29:8686",
           "docker": "lidarr",
-          "tags": ["music", "automation"]
+          "tags": [
+            "music",
+            "automation"
+          ]
         },
         {
           "name": "Prowlarr",
           "desc": "Gestionnaire d'indexeurs",
           "url": "http://192.168.1.29:9696",
           "docker": "prowlarr",
-          "tags": ["indexer"]
+          "tags": [
+            "indexer"
+          ]
         },
         {
           "name": "Jackett",
           "desc": "Proxy indexeurs torrents",
           "url": "http://192.168.1.29:9117",
           "docker": "jackett",
-          "tags": ["indexer", "torrent"]
+          "tags": [
+            "indexer",
+            "torrent"
+          ]
         },
         {
           "name": "qBittorrent",
           "desc": "Client torrent (via VPN Gluetun)",
           "url": "http://192.168.1.29:1234",
           "docker": "qbittorrent",
-          "tags": ["torrent", "vpn"]
+          "tags": [
+            "torrent",
+            "vpn"
+          ]
         },
         {
           "name": "FlareSolverr",
           "desc": "Bypass Cloudflare pour indexeurs",
           "url": "http://192.168.1.29:8191",
           "docker": "flaresolverr",
-          "tags": ["proxy"]
+          "tags": [
+            "proxy"
+          ]
         },
         {
           "name": "Pinchflat",
           "desc": "Gestionnaire de téléchargement YouTube / canaux vidéo",
           "url": "http://192.168.1.29:8945",
           "docker": "pinchflat-pinchflat-1",
-          "tags": ["youtube", "media", "download"]
+          "tags": [
+            "youtube",
+            "media",
+            "download"
+          ]
         }
       ]
     },
@@ -246,56 +356,82 @@
           "desc": "Plateforme domotique centrale",
           "url": "http://192.168.1.29:8123",
           "docker": "homeassistant",
-          "tags": ["domotique", "automation"]
+          "tags": [
+            "domotique",
+            "automation"
+          ]
         },
         {
           "name": "HouseHub",
           "desc": "Gestion domotique familiale",
           "url": "https://househub.nas.percolouco.com",
           "docker": "househub",
-          "tags": ["domotique", "famille"]
+          "tags": [
+            "domotique",
+            "famille"
+          ]
         },
         {
           "name": "ESPhome",
           "desc": "Firmware & gestion des devices ESP",
           "url": null,
           "docker": "esphome",
-          "tags": ["esp", "firmware"]
+          "tags": [
+            "esp",
+            "firmware"
+          ]
         },
         {
           "name": "Syncthing",
           "desc": "Synchronisation de fichiers P2P",
           "url": "http://192.168.1.29:8384",
           "docker": "syncthing",
-          "tags": ["sync", "files"]
+          "tags": [
+            "sync",
+            "files"
+          ]
         },
         {
           "name": "InvRaw",
           "desc": "Proxy données brutes panneaux solaires Growatt",
           "url": "https://invraw.nas.percolouco.com",
           "docker": "invraw",
-          "tags": ["solar", "energy"]
+          "tags": [
+            "solar",
+            "energy"
+          ]
         },
         {
           "name": "Bresser Live",
           "desc": "Station météo Bresser en temps réel",
           "url": "http://192.168.1.29:8887",
           "docker": "bresser-live",
-          "tags": ["weather", "sensors"]
+          "tags": [
+            "weather",
+            "sensors"
+          ]
         },
         {
           "name": "Mosquitto",
           "desc": "Broker MQTT",
           "url": null,
           "docker": "mosquitto",
-          "tags": ["mqtt", "iot"]
+          "tags": [
+            "mqtt",
+            "iot"
+          ]
         },
         {
           "name": "CamWatch",
           "desc": "Rapport des passages véhicules — plaque, couleur, snapshot",
           "url": "https://camwatch.nas.percolouco.com",
           "docker": "camwatch",
-          "tags": ["camera", "surveillance", "lpr", "rapport"]
+          "tags": [
+            "camera",
+            "surveillance",
+            "lpr",
+            "rapport"
+          ]
         }
       ]
     },
@@ -310,35 +446,51 @@
           "desc": "Gestion et partage de photos self-hosted",
           "url": "https://immich.nas.percolouco.com",
           "docker": "immich_server",
-          "tags": ["photos", "media"]
+          "tags": [
+            "photos",
+            "media"
+          ]
         },
         {
           "name": "Nextcloud",
           "desc": "Cloud personnel — fichiers, calendrier, contacts",
           "url": "http://192.168.1.29:8080",
           "docker": "nextcloud",
-          "tags": ["cloud", "files"]
+          "tags": [
+            "cloud",
+            "files"
+          ]
         },
         {
           "name": "VSCode",
           "desc": "Éditeur de code dans le navigateur",
           "url": "http://192.168.1.29:8888",
           "docker": "vscode",
-          "tags": ["dev", "editor"]
+          "tags": [
+            "dev",
+            "editor"
+          ]
         },
         {
           "name": "Planka",
           "desc": "Gestion de projets Kanban",
           "url": "https://planka.nas.percolouco.com",
           "docker": "planka",
-          "tags": ["kanban", "projects"]
+          "tags": [
+            "kanban",
+            "projects"
+          ]
         },
         {
           "name": "Paperless-ngx",
           "desc": "Gestion électronique de documents (OCR, factures, impôts)",
           "url": "https://paperless.nas.percolouco.com",
           "docker": "paperless",
-          "tags": ["documents", "ocr", "factures"]
+          "tags": [
+            "documents",
+            "ocr",
+            "factures"
+          ]
         }
       ]
     },
@@ -353,35 +505,50 @@
           "desc": "Instance Firefox via VPN Gluetun",
           "url": "http://192.168.1.29:3000",
           "docker": "vpn_mh_retak",
-          "tags": ["vpn", "browser"]
+          "tags": [
+            "vpn",
+            "browser"
+          ]
         },
         {
           "name": "Firefox — coucouze",
           "desc": "Instance Firefox via VPN Gluetun",
           "url": "http://192.168.1.29:3100",
           "docker": "vpn_mh_coucouze",
-          "tags": ["vpn", "browser"]
+          "tags": [
+            "vpn",
+            "browser"
+          ]
         },
         {
           "name": "Firefox — roxxor",
           "desc": "Instance Firefox via VPN Gluetun",
           "url": "http://192.168.1.29:3200",
           "docker": "vpn_mh_roxxor",
-          "tags": ["vpn", "browser"]
+          "tags": [
+            "vpn",
+            "browser"
+          ]
         },
         {
           "name": "Firefox — xouz",
           "desc": "Instance Firefox via VPN Gluetun",
           "url": "http://192.168.1.29:3300",
           "docker": "vpn_mh_xouz",
-          "tags": ["vpn", "browser"]
+          "tags": [
+            "vpn",
+            "browser"
+          ]
         },
         {
           "name": "Firefox — nale",
           "desc": "Instance Firefox via VPN Gluetun",
           "url": "http://192.168.1.29:3400",
           "docker": "vpn_mh_nale",
-          "tags": ["vpn", "browser"]
+          "tags": [
+            "vpn",
+            "browser"
+          ]
         }
       ]
     }
