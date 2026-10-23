@@ -286,6 +286,16 @@
             "database",
             "admin"
           ]
+        },
+        {
+          "name": "WAHA",
+          "desc": "Passerelle WhatsApp (API HTTP) — compte « MH Bot » pour les résultats MountyHall",
+          "url": "https://waha.nas.percolouco.com/dashboard",
+          "docker": "waha",
+          "tags": [
+            "whatsapp",
+            "api"
+          ]
         }
       ]
     },
