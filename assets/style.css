@@ -195,3 +195,43 @@
   color: #e9d5ff;
   box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
 }
+
+/* ── Stats pills cliquables (filtre par statut) ───────────────────────────── */
+.stat-pill.clickable {
+  cursor: pointer;
+  background-clip: padding-box;
+  transition: box-shadow 0.15s, transform 0.1s, filter 0.15s;
+}
+.stat-pill.clickable:hover { filter: brightness(1.25); }
+.stat-pill.clickable:active { transform: scale(0.96); }
+.stat-pill.clickable.active { box-shadow: 0 0 0 2px currentColor; }
+
+/* ── Recherche dynamique ──────────────────────────────────────────────────── */
+.search-box { position: relative; }
+.search-box input {
+  width: 14rem;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 9999px;
+  color: #e6edf3;
+  font-size: 0.8rem;
+  padding: 0.3rem 1.8rem 0.3rem 0.8rem;
+  outline: none;
+  transition: border-color 0.15s, width 0.2s;
+}
+.search-box input:focus { border-color: #8b5cf6; width: 18rem; }
+.search-box input::placeholder { color: #6e7681; }
+.search-box input::-webkit-search-cancel-button { display: none; }
+.search-box button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8b949e;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+.search-box button:hover { color: #fff; }
+@media (max-width: 640px) {
+  .search-box input, .search-box input:focus { width: 9rem; }
+}
