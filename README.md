@@ -88,7 +88,7 @@ Dans `services.json`, ajouter dans le tableau `categories` :
 
 | Catégorie | Services |
 |-----------|----------|
-| 🛠️ Mes Projets | PercoHub, CronHub, Todo / Mémos, LocOutil, PercoMemo, Cartes de fidélité, PrintVault, Orca Web, OrcaSlicer complet, MountyCrawl, PercoVitrine, WalletDash, Wallet2, Location, TarifElec, PrintFarm, Gridfinity, MH Proxy |
+| 🛠️ Mes Projets | PercoHub, CronHub, Todo / Mémos, LocOutil, PercoMemo, Cartes de fidélité, PrintVault, Orca Web, OrcaSlicer complet, MountyCrawl, PercoVitrine, WalletDash, Wallet2, MarcaBR, Location, TarifElec, PrintFarm, Gridfinity, MH Proxy |
 | 🔧 Infrastructure | Portainer, Traefik, Grafana, InfluxDB, HomelabDash, Gitea, Gitea Runner, Watchtower, phpMyAdmin, WAHA |
 | 🎬 Média | Plex, Jellyseerr, Sonarr, Radarr, Lidarr, Prowlarr, Jackett, qBittorrent, FlareSolverr, Pinchflat, Tautulli |
 | 🏠 Domotique | Home Assistant, HouseHub, ESPhome, Syncthing, InvRaw, Bresser Live, Mosquitto, CamWatch |
