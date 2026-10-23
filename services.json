@@ -128,6 +128,16 @@
             "vitrine",
             "web"
           ]
+        },
+        {
+          "name": "WalletDash",
+          "desc": "Dashboard des comptes, transactions et simulations (données Wallet by BudgetBakers)",
+          "url": "https://wallet.nas.percolouco.com",
+          "docker": "walletdash",
+          "tags": [
+            "finance",
+            "budget"
+          ]
         }
       ]
     },
