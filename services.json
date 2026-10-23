@@ -130,6 +130,16 @@
           ]
         },
         {
+          "name": "Wallet2",
+          "desc": "Comptes bancaires en direct via Enable Banking (soldes, transactions)",
+          "url": "https://wallet2.nas.percolouco.com",
+          "docker": "wallet2",
+          "tags": [
+            "finance",
+            "banque"
+          ]
+        },
+        {
           "name": "WalletDash",
           "desc": "Dashboard des comptes, transactions et simulations (données Wallet by BudgetBakers)",
           "url": "https://wallet.nas.percolouco.com",
