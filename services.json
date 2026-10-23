@@ -179,6 +179,16 @@
             "gridfinity",
             "stl"
           ]
+        },
+        {
+          "name": "MH Proxy",
+          "desc": "Reverse proxy MountyHall avec surcouche CSS/JS perso — jouer depuis n'importe quel appareil",
+          "url": "https://mh2.nas.percolouco.com/mountyhall/MH_Play/PlayStart2.php",
+          "docker": "mh-proxy",
+          "tags": [
+            "mountyhall",
+            "proxy"
+          ]
         }
       ]
     },
