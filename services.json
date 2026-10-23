@@ -138,6 +138,47 @@
             "finance",
             "budget"
           ]
+        },
+        {
+          "name": "Location",
+          "desc": "Gestion de locations d'appartement — propriétaires et gestionnaires (bêta)",
+          "url": "https://location.nas.percolouco.com",
+          "docker": "location",
+          "tags": [
+            "location",
+            "immobilier"
+          ]
+        },
+        {
+          "name": "TarifElec",
+          "desc": "Comparateur de tarifs d'électricité — Base, HP/HC, Tempo, ZEN week-end",
+          "url": "https://tarifelec.nas.percolouco.com",
+          "docker": "tarifelec",
+          "tags": [
+            "électricité",
+            "tarifs"
+          ]
+        },
+        {
+          "name": "PrintFarm",
+          "desc": "Ferme d'impression 3D — imprimantes, bobines, commandes, fichiers G-code, jobs et maintenance",
+          "url": "https://printfarm.nas.percolouco.com",
+          "docker": "printfarm-web",
+          "tags": [
+            "3d",
+            "impression"
+          ]
+        },
+        {
+          "name": "Gridfinity",
+          "desc": "Plan de disposition Gridfinity (2D/3D) et export STL des plaques et bacs",
+          "url": "https://gridfinity.nas.percolouco.com",
+          "docker": "gridfinity",
+          "tags": [
+            "3d",
+            "gridfinity",
+            "stl"
+          ]
         }
       ]
     },
@@ -224,16 +265,6 @@
           "tags": [
             "docker",
             "updates"
-          ]
-        },
-        {
-          "name": "CronMaster",
-          "desc": "Gestionnaire de tâches cron",
-          "url": "http://192.168.1.29:40123",
-          "docker": "cronmaster",
-          "tags": [
-            "cron",
-            "scheduler"
           ]
         },
         {
@@ -351,6 +382,16 @@
             "youtube",
             "media",
             "download"
+          ]
+        },
+        {
+          "name": "Tautulli",
+          "desc": "Statistiques et historique Plex",
+          "url": "https://tautulli.nas.percolouco.com",
+          "docker": "tautulli",
+          "tags": [
+            "plex",
+            "stats"
           ]
         }
       ]
