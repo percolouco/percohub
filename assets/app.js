@@ -13,11 +13,14 @@ const API_BASE = '/api.php';
 let refreshTimer = null;
 let countdown = REFRESH_INTERVAL;
 let activeFilter = 'all';
+let statusFilter = 'all'; // all | online | offline
+let searchQuery = '';
 let lastData = null;
 
 // ── Init ───────────────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSearch();
   loadAll();
   startCountdown();
 });
@@ -52,20 +55,26 @@ function renderDashboard(data) {
   const dash = document.getElementById('dashboard');
   dash.innerHTML = '';
 
+  let shown = 0;
+
   data.categories.forEach(cat => {
     if (activeFilter !== 'all' && cat.id !== activeFilter) return;
+
+    const services = cat.services.filter(matchesFilters);
+    if (services.length === 0) return;
+    shown += services.length;
 
     const section = document.createElement('section');
     section.dataset.cat = cat.id;
 
     // Header
-    const onlineCount = cat.services.filter(s => s.status?.online).length;
+    const onlineCount = services.filter(s => s.status?.online).length;
     section.innerHTML = `
       <div class="section-header">
         <span class="text-xl">${cat.icon}</span>
         <span class="section-title">${cat.name}</span>
-        <span class="section-count">${cat.services.length} services</span>
-        <span class="text-xs text-gray-600 ml-auto">${onlineCount}/${cat.services.length} en ligne</span>
+        <span class="section-count">${services.length} services</span>
+        <span class="text-xs text-gray-600 ml-auto">${onlineCount}/${services.length} en ligne</span>
       </div>
       <div class="services-grid" id="grid-${cat.id}"></div>
     `;
@@ -73,12 +82,80 @@ function renderDashboard(data) {
     dash.appendChild(section);
 
     const grid = section.querySelector(`#grid-${cat.id}`);
-    cat.services.forEach(svc => {
+    services.forEach(svc => {
       grid.appendChild(buildCard(svc, cat.color));
     });
   });
 
+  const appsShown = applyAppsFilter();
+  document.getElementById('no-results').classList.toggle('hidden', shown + appsShown > 0);
   dash.classList.remove('hidden');
+}
+
+// ── Recherche & filtres ────────────────────────────────────────────────────
+
+function normalize(str) {
+  return (str || '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function matchesFilters(svc) {
+  if (statusFilter === 'online' && !svc.status?.online) return false;
+  if (statusFilter === 'offline' && svc.status?.online) return false;
+
+  const q = normalize(searchQuery).trim();
+  if (!q) return true;
+  const hay = normalize([svc.name, svc.desc, svc.note, svc.docker, svc.url, ...(svc.tags || [])].join(' '));
+  return q.split(/\s+/).every(word => hay.includes(word));
+}
+
+// Section statique « Mes Applications » : filtrée par la recherche uniquement
+// (pas de statut), masquée quand on filtre par statut ou par catégorie.
+function applyAppsFilter() {
+  const section = document.getElementById('apps-section');
+  if (!section) return 0;
+  const q = normalize(searchQuery).trim();
+  let visible = 0;
+  section.querySelectorAll('.app-card').forEach(card => {
+    const hay = normalize(card.textContent);
+    const ok = !q || q.split(/\s+/).every(word => hay.includes(word));
+    card.classList.toggle('hidden', !ok);
+    if (ok) visible++;
+  });
+  const hideSection = statusFilter !== 'all' || activeFilter !== 'all' || visible === 0;
+  section.classList.toggle('hidden', hideSection);
+  return hideSection ? 0 : visible;
+}
+
+function initSearch() {
+  const input = document.getElementById('search-input');
+  const clear = document.getElementById('search-clear');
+
+  const update = () => {
+    searchQuery = input.value;
+    clear.classList.toggle('hidden', !searchQuery);
+    if (lastData) renderDashboard(lastData);
+  };
+  input.addEventListener('input', update);
+  clear.addEventListener('click', () => { input.value = ''; update(); input.focus(); });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== input && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      input.focus();
+    } else if (e.key === 'Escape' && document.activeElement === input) {
+      input.value = '';
+      update();
+      input.blur();
+    }
+  });
+}
+
+function setStatusFilter(status) {
+  statusFilter = statusFilter === status ? 'all' : status;
+  if (lastData) {
+    renderDashboard(lastData);
+    renderGlobalStats(lastData);
+  }
 }
 
 function buildCard(svc, catColor) {
@@ -165,15 +242,18 @@ function renderGlobalStats(data) {
   const offline = total - online;
 
   el.innerHTML = `
-    <span class="stat-pill border-emerald-800 text-emerald-400 bg-emerald-900/20">
+    <button type="button" onclick="setStatusFilter('online')" title="Afficher uniquement les services en ligne"
+      class="stat-pill clickable border-emerald-800 text-emerald-400 bg-emerald-900/20 ${statusFilter === 'online' ? 'active' : ''}">
       <span class="status-dot online"></span> ${online}
-    </span>
-    <span class="stat-pill border-red-800 text-red-400 bg-red-900/20">
+    </button>
+    <button type="button" onclick="setStatusFilter('offline')" title="Afficher uniquement les services hors ligne"
+      class="stat-pill clickable border-red-800 text-red-400 bg-red-900/20 ${statusFilter === 'offline' ? 'active' : ''}">
       <span class="status-dot offline"></span> ${offline}
-    </span>
-    <span class="stat-pill border-[#30363d] text-gray-500">
+    </button>
+    <button type="button" onclick="setStatusFilter('all')" title="Tout afficher"
+      class="stat-pill clickable border-[#30363d] text-gray-500">
       ${total} services
-    </span>
+    </button>
   `;
 }
 

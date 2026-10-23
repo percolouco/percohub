@@ -32,6 +32,12 @@
       <span class="text-xs text-gray-500 ml-2 hidden sm:block">Dashboard centralisé</span>
     </div>
     <div class="flex items-center gap-4">
+      <!-- Recherche dynamique -->
+      <div class="search-box">
+        <input id="search-input" type="search" placeholder="Rechercher un outil…  ( / )" autocomplete="off" spellcheck="false" />
+        <button id="search-clear" class="hidden" title="Effacer (Échap)" type="button">✕</button>
+      </div>
+
       <!-- Filtres catégories -->
       <div id="filter-bar" class="flex gap-2 flex-wrap justify-end hidden sm:flex"></div>
 
@@ -55,7 +61,7 @@
   <main class="max-w-[1600px] mx-auto px-4 py-6">
 
     <!-- ── Mes Applications ────────────────────────────────────────────────────── -->
-    <section class="mb-10">
+    <section class="mb-10" id="apps-section">
       <!-- En-tête de section -->
       <div class="section-header">
         <h2 class="section-title">🚀 Mes Applications</h2>
@@ -63,7 +69,7 @@
       </div>
 
       <!-- Grille des applications -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="apps-grid">
         
         <!-- App 1: CronHub -->
         <div class="app-card group">
@@ -217,6 +223,9 @@
       <p class="text-red-400 text-lg">⚠️ Impossible de contacter l'API</p>
       <p id="error-msg" class="text-gray-500 text-sm mt-2"></p>
     </div>
+
+    <!-- Aucun résultat -->
+    <div id="no-results" class="hidden text-center text-gray-500 py-16">Aucun service ne correspond à ce filtre.</div>
 
     <!-- Dashboard content -->
     <div id="dashboard" class="hidden space-y-10"></div>

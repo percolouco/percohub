@@ -22,7 +22,8 @@ nohup php -S 0.0.0.0:9300 -t /home/perco/projects/percohub/ > /tmp/percohub-php.
 - ✅ Status live (Docker inspect + HTTP ping)
 - ✅ Catégories : Mes Projets / Infrastructure / Média / Domotique / Productivité / VPN Firefox
 - ✅ Filtre par catégorie (navbar)
-- ✅ Stats globales (online/offline)
+- ✅ Recherche dynamique dans le header (nom, description, tags, container, URL ; raccourci `/`, `Échap` pour effacer)
+- ✅ Stats globales (online/offline) cliquables : clic sur la pastille rouge = n'afficher que les services hors ligne, sur la verte = en ligne, re-clic = tout afficher (se combine avec la recherche et le filtre de catégorie)
 - ✅ Auto-refresh toutes les 30s
 - ✅ Clic sur une carte → ouvre l'URL dans un nouvel onglet
 - ✅ Dark theme cohérent avec les autres projets
