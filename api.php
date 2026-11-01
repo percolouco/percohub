@@ -13,6 +13,39 @@ $action = $_GET['action'] ?? 'all';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
+/** Noms de tous les conteneurs Docker existants. */
+function allDockerNames(): array {
+    $raw = shell_exec("docker ps -a --format '{{.Names}}' 2>/dev/null");
+    return array_values(array_filter(array_map('trim', explode("\n", (string) $raw))));
+}
+
+/** Conteneurs du catalogue sur lesquels on a le droit d'agir (services applicatifs uniquement). */
+function controllableContainers(array $config): array {
+    $protected = $config['protected'] ?? [];
+    $ok = [];
+    foreach ($config['categories'] as $cat) {
+        if (!empty($cat['readonly']) || ($cat['id'] ?? '') === 'vpn') continue;
+        foreach ($cat['services'] as $svc) {
+            $name = $svc['docker'] ?? null;
+            if (is_string($name) && empty($svc['self']) && !in_array($name, $protected, true)) $ok[$name] = true;
+        }
+    }
+    return array_keys($ok);
+}
+
+/** Tous les conteneurs référencés dans le catalogue. */
+function catalogContainers(array $config): array {
+    $names = [];
+    foreach ($config['categories'] as $cat) {
+        foreach ($cat['services'] as $svc) {
+            $d = $svc['docker'] ?? null;
+            if (is_string($d)) $names[] = $d;
+            elseif (is_array($d)) array_push($names, ...$d);
+        }
+    }
+    return $names;
+}
+
 function dockerStatus(string $name): array {
     $raw = shell_exec("docker inspect --format '{{.State.Status}}|{{if .State.Health}}{{.State.Health.Status}}{{end}}' " . escapeshellarg($name) . " 2>/dev/null");
     if (empty($raw)) return ['status' => 'absent', 'health' => null];
@@ -128,12 +161,25 @@ if ($action === 'all') {
     // Tous les services avec leur statut
     $output = ['categories' => [], 'generated_at' => date('c'), 'total' => 0, 'online' => 0];
 
+    // Conteneurs Docker absents du catalogue : affichés automatiquement dans « Non classés »
+    $unclassified = array_values(array_diff(allDockerNames(), catalogContainers($config)));
+    if ($unclassified) {
+        $config['categories'][] = [
+            'id' => 'unclassified', 'name' => 'Non classés', 'icon' => '❓', 'color' => 'amber', 'readonly' => true,
+            'services' => array_map(fn($n) => [
+                'name' => $n, 'desc' => 'Conteneur absent du catalogue (à classer dans services.json)', 'docker' => $n, 'tags' => ['non-classé'],
+            ], $unclassified),
+        ];
+    }
+    $controllable = controllableContainers($config);
+
     foreach ($config['categories'] as $cat) {
         $catOut = [
             'id'       => $cat['id'],
             'name'     => $cat['name'],
             'icon'     => $cat['icon'],
             'color'    => $cat['color'],
+            'collapsed' => !empty($cat['collapsed']),
             'services' => [],
         ];
 
@@ -142,6 +188,7 @@ if ($action === 'all') {
 
             $catOut['services'][] = array_merge($svc, [
                 'status' => $statusInfo,
+                'controllable' => is_string($svc['docker'] ?? null) && in_array($svc['docker'], $controllable, true),
             ]);
 
             $output['total']++;
@@ -154,6 +201,28 @@ if ($action === 'all') {
     $output['offline'] = $output['total'] - $output['online'];
 
     echo json_encode($output, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    exit;
+}
+
+if ($action === 'control') {
+    // Démarrer / arrêter / redémarrer un conteneur applicatif du catalogue (POST + en-tête anti-CSRF)
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST' || ($_SERVER['HTTP_X_PERCOHUB'] ?? '') !== '1') {
+        http_response_code(403);
+        echo json_encode(['error' => 'requête refusée'], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    $in   = json_decode(file_get_contents('php://input'), true) ?: [];
+    $name = (string) ($in['container'] ?? '');
+    $op   = (string) ($in['op'] ?? '');
+    if (!in_array($op, ['start', 'stop', 'restart'], true) || !in_array($name, controllableContainers($config), true)) {
+        http_response_code(403);
+        echo json_encode(['error' => 'action non autorisée sur ce conteneur'], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    $cmd = $op === 'start' ? 'docker start' : "docker $op -t 20";
+    exec("$cmd " . escapeshellarg($name) . ' 2>&1', $out, $code);
+    error_log("PercoHub: $op $name -> code $code (" . ($_SERVER['PHP_AUTH_USER'] ?? $_SERVER['REMOTE_ADDR'] ?? '?') . ')');
+    echo json_encode(['ok' => $code === 0, 'container' => $name, 'op' => $op, 'output' => implode("\n", $out)], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -181,4 +250,4 @@ if ($action === 'docker') {
     exit;
 }
 
-echo json_encode(['error' => 'action invalide. Utilisez: all, status, config, docker'], JSON_UNESCAPED_UNICODE);
+echo json_encode(['error' => 'action invalide. Utilisez: all, status, config, docker, control'], JSON_UNESCAPED_UNICODE);

@@ -209,6 +209,43 @@
             "mountyhall",
             "proxy"
           ]
+        },
+        {
+          "name": "Usage Claude",
+          "desc": "Suivi de la consommation Claude",
+          "url": "https://usage.nas.percolouco.com",
+          "docker": "claude-usage",
+          "tags": [
+            "claude",
+            "stats"
+          ]
+        },
+        {
+          "name": "Fidélité (app)",
+          "desc": "Application Shopify de fidélité",
+          "url": "https://fidelite.nas.percolouco.com",
+          "docker": "fidelite-app",
+          "tags": [
+            "shopify"
+          ]
+        },
+        {
+          "name": "MountyHall (mh)",
+          "desc": "Outils et tuto MountyHall",
+          "url": "https://mh.nas.percolouco.com",
+          "docker": "mh",
+          "tags": [
+            "mountyhall"
+          ]
+        },
+        {
+          "name": "PrintFarm Listener",
+          "desc": "Écoute des imprimantes 3D",
+          "docker": "printfarm-listener",
+          "tags": [
+            "3d",
+            "impression"
+          ]
         }
       ]
     },
@@ -315,6 +352,14 @@
           "tags": [
             "whatsapp",
             "api"
+          ]
+        },
+        {
+          "name": "AdGuard Home",
+          "desc": "DNS & blocage de publicités",
+          "docker": "adguardhome",
+          "tags": [
+            "dns"
           ]
         }
       ]
@@ -523,6 +568,24 @@
             "lpr",
             "rapport"
           ]
+        },
+        {
+          "name": "HouseHub — Fefe",
+          "desc": "Instance HouseHub de Fefe",
+          "url": "https://househub-fefe.nas.percolouco.com",
+          "docker": "househub-fefe",
+          "tags": [
+            "domotique"
+          ]
+        },
+        {
+          "name": "HouseHub — Perco",
+          "desc": "Instance HouseHub de Perco",
+          "url": "https://househub-perco.nas.percolouco.com",
+          "docker": "househub-perco",
+          "tags": [
+            "domotique"
+          ]
         }
       ]
     },
@@ -642,6 +705,201 @@
           ]
         }
       ]
+    },
+    {
+      "id": "tech",
+      "name": "Technique",
+      "icon": "🔩",
+      "color": "slate",
+      "collapsed": true,
+      "readonly": true,
+      "services": [
+        {
+          "name": "Gluetun — qBittorrent",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "gluetun_qbittorrent",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Gluetun — coucouze",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "gluetun_vpn_mh_coucouze",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Gluetun — nale",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "gluetun_vpn_mh_nale",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Gluetun — retak",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "gluetun_vpn_mh_retak",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Gluetun — roxxor",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "gluetun_vpn_mh_roxxor",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Gluetun — xouz",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "gluetun_vpn_mh_xouz",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "qBittorrent — port sync",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "qbittorrent-port-sync",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "HouseHub — base",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "househub-db",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "MH — base",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "mh-db",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Nextcloud — base",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "nextcloud-db",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Paperless — base",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "paperless-db",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Paperless — Redis",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "paperless-redis",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Immich — Postgres",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "immich_postgres",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Immich — Redis",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "immich_redis",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Immich — ML",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "immich_machine_learning",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "IPCheck — app",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "ipcheck-app",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "IPCheck — base",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "ipcheck-db",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "IPCheck — Redis",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "ipcheck-redis",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "TarifElec — base",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "tarifelec-db",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Location — base",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "location-db",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "MountyCrawl — base",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "mountycrawl-db",
+          "tags": [
+            "technique"
+          ]
+        },
+        {
+          "name": "Planka — Postgres",
+          "desc": "Conteneur technique (VPN, base de données, cache)",
+          "docker": "planka-postgres",
+          "tags": [
+            "technique"
+          ]
+        }
+      ]
     }
+  ],
+  "protected": [
+    "traefik",
+    "portainer",
+    "percohub",
+    "cronhub",
+    "gitea",
+    "gitea-runner",
+    "homelabdash"
   ]
 }

@@ -235,3 +235,10 @@
 @media (max-width: 640px) {
   .search-box input, .search-box input:focus { width: 9rem; }
 }
+
+/* Boutons de contrôle des conteneurs */
+.ctl-btn { font-size: 0.7rem; padding: 2px 8px; border: 1px solid #30363d; border-radius: 6px; color: #8b949e; background: transparent; cursor: pointer; }
+.ctl-btn:hover { color: #fff; border-color: #8b949e; }
+.ctl-btn:disabled { opacity: 0.5; cursor: wait; }
+.ctl-stop:hover { color: #f85149; border-color: #f85149; }
+.ctl-start { color: #3fb950; border-color: #238636; }

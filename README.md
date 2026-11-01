@@ -27,6 +27,9 @@ nohup php -S 0.0.0.0:9300 -t /home/perco/projects/percohub/ > /tmp/percohub-php.
 - ✅ Auto-refresh toutes les 30s
 - ✅ Clic sur une carte → ouvre l'URL dans un nouvel onglet
 - ✅ Dark theme cohérent avec les autres projets
+- ✅ **Boutons Démarrer / Arrêter / Redémarrer** sur les services applicatifs (confirmation avant arrêt/redémarrage). Pas de bouton sur : `traefik`, `portainer`, `percohub`, `cronhub`, `gitea`, `gitea-runner`, `homelabdash` (liste `protected` dans `services.json`), ni sur les catégories « Technique » et « VPN Firefox ». Contrôlé aussi côté serveur (`api.php?action=control`, POST + en-tête `X-Percohub`)
+- ✅ Catégorie **Technique** (bases, Redis, gluetun) repliée par défaut ; section automatique **Non classés** pour tout conteneur Docker absent du catalogue
+- 🔒 **Authentification basic auth** via middleware Traefik `percohub-auth` (labels dans `/opt/container/percohub/docker-compose.yml`, hash apr1, `$` doublés en `$$`)
 
 ## Structure
 

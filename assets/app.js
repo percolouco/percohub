@@ -16,6 +16,7 @@ let activeFilter = 'all';
 let statusFilter = 'all'; // all | online | offline
 let searchQuery = '';
 let lastData = null;
+const expanded = new Set(); // catégories repliables dépliées par l'utilisateur
 
 // ── Init ───────────────────────────────────────────────────────────────────
 
@@ -69,14 +70,16 @@ function renderDashboard(data) {
 
     // Header
     const onlineCount = services.filter(s => s.status?.online).length;
+    const collapsed = !!cat.collapsed && !searchQuery.trim() && activeFilter === 'all' && statusFilter === 'all' && !expanded.has(cat.id);
     section.innerHTML = `
-      <div class="section-header">
+      <div class="section-header" ${cat.collapsed ? `style="cursor:pointer" onclick="toggleCategory('${cat.id}')" title="Replier / déplier"` : ''}>
+        ${cat.collapsed ? `<span class="text-gray-500">${collapsed ? '▸' : '▾'}</span>` : ''}
         <span class="text-xl">${cat.icon}</span>
         <span class="section-title">${cat.name}</span>
         <span class="section-count">${services.length} services</span>
         <span class="text-xs text-gray-600 ml-auto">${onlineCount}/${services.length} en ligne</span>
       </div>
-      <div class="services-grid" id="grid-${cat.id}"></div>
+      <div class="services-grid ${collapsed ? 'hidden' : ''}" id="grid-${cat.id}"></div>
     `;
 
     dash.appendChild(section);
@@ -90,6 +93,35 @@ function renderDashboard(data) {
   const appsShown = applyAppsFilter();
   document.getElementById('no-results').classList.toggle('hidden', shown + appsShown > 0);
   dash.classList.remove('hidden');
+}
+
+function toggleCategory(id) {
+  expanded.has(id) ? expanded.delete(id) : expanded.add(id);
+  if (lastData) renderDashboard(lastData);
+}
+
+// ── Contrôle des conteneurs (démarrer / arrêter / redémarrer) ──────────────
+
+const OP_LABELS = { start: 'démarrer', stop: 'arrêter', restart: 'redémarrer' };
+
+async function controlContainer(event, container, op, label) {
+  event.stopPropagation();
+  if (op !== 'start' && !confirm(`Voulez-vous ${OP_LABELS[op]} « ${label} » ?`)) return;
+  const btn = event.currentTarget;
+  btn.disabled = true;
+  btn.textContent = '…';
+  try {
+    const res = await fetch(`${API_BASE}?action=control`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Percohub': '1' },
+      body: JSON.stringify({ container, op }),
+    });
+    const out = await res.json();
+    if (!out.ok) alert(`Échec (${OP_LABELS[op]} ${label}) : ${out.error || out.output || 'erreur inconnue'}`);
+  } catch (err) {
+    alert(`Échec (${OP_LABELS[op]} ${label}) : ${err.message}`);
+  }
+  loadAll();
 }
 
 // ── Recherche & filtres ────────────────────────────────────────────────────
@@ -202,6 +234,19 @@ function buildCard(svc, catColor) {
     `<span class="text-xs text-gray-600 mr-1">#${t}</span>`
   ).join('');
 
+  let controls = '';
+  if (svc.controllable) {
+    const c = JSON.stringify(svc.docker).replace(/"/g, '&quot;');
+    const n = JSON.stringify(svc.name).replace(/"/g, '&quot;');
+    const running = ['running', 'healthy', 'online'].includes(statusText) || isOnline;
+    controls = `<div class="flex gap-1.5 mt-2">
+      ${running
+        ? `<button type="button" class="ctl-btn ctl-stop" title="Arrêter" onclick="controlContainer(event, ${c}, 'stop', ${n})">⏹ Arrêter</button>
+           <button type="button" class="ctl-btn" title="Redémarrer" onclick="controlContainer(event, ${c}, 'restart', ${n})">↻ Redémarrer</button>`
+        : `<button type="button" class="ctl-btn ctl-start" title="Démarrer" onclick="controlContainer(event, ${c}, 'start', ${n})">▶ Démarrer</button>`}
+    </div>`;
+  }
+
   const card = document.createElement('div');
   card.className = `service-card cat-${catColor} ${hasUrl ? 'has-link' : ''}`;
 
@@ -228,6 +273,7 @@ function buildCard(svc, catColor) {
       ${noteBadge}
       ${hasUrl ? `<span class="text-xs text-gray-700 truncate max-w-[140px]" title="${svc.url}">${formatUrl(svc.url)}</span>` : ''}
     </div>
+    ${controls}
   `;
 
   return card;
