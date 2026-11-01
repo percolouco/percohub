@@ -219,7 +219,13 @@ if ($action === 'control') {
         echo json_encode(['error' => 'action non autorisée sur ce conteneur'], JSON_UNESCAPED_UNICODE);
         exit;
     }
-    $cmd = $op === 'start' ? 'docker start' : "docker $op -t 20";
+    $timeout = 20;
+    foreach ($config['categories'] as $cat) {
+        foreach ($cat['services'] as $svc) {
+            if (($svc['docker'] ?? null) === $name && isset($svc['stop_timeout'])) $timeout = (int) $svc['stop_timeout'];
+        }
+    }
+    $cmd = $op === 'start' ? 'docker start' : "docker $op -t $timeout";
     exec("$cmd " . escapeshellarg($name) . ' 2>&1', $out, $code);
     error_log("PercoHub: $op $name -> code $code (" . ($_SERVER['PHP_AUTH_USER'] ?? $_SERVER['REMOTE_ADDR'] ?? '?') . ')');
     echo json_encode(['ok' => $code === 0, 'container' => $name, 'op' => $op, 'output' => implode("\n", $out)], JSON_UNESCAPED_UNICODE);

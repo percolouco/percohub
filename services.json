@@ -246,6 +246,19 @@
             "3d",
             "impression"
           ]
+        },
+        {
+          "name": "VM Mercedes (Windows 7)",
+          "desc": "Logiciel de diagnostic Mercedes v16 dans une VM — démarrer puis ouvrir (≈1 min de boot)",
+          "url": "https://mercedes.nas.percolouco.com/vnc.html?autoconnect=true&resize=scale",
+          "docker": "mercedes-vm",
+          "stop_timeout": 100,
+          "tags": [
+            "vm",
+            "mercedes",
+            "windows"
+          ],
+          "note": "Arrêt propre ≈ 1 min"
         }
       ]
     },
