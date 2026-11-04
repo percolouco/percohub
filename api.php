@@ -256,4 +256,34 @@ if ($action === 'docker') {
     exit;
 }
 
-echo json_encode(['error' => 'action invalide. Utilisez: all, status, config, docker, control'], JSON_UNESCAPED_UNICODE);
+if ($action === 'network') {
+    // Inventaire du réseau local (écrit par scanner/netscan.py sur l'hôte) + noms donnés à la main
+    $net = json_decode((string) @file_get_contents('/data/network.json'), true) ?: ['scanned_at' => null, 'devices' => []];
+    $names = json_decode((string) @file_get_contents('/data/names.json'), true) ?: [];
+    foreach ($net['devices'] as &$d) { $d['name'] = $names[$d['mac']] ?? ''; }
+    echo json_encode($net, JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+if ($action === 'network_name') {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST' || ($_SERVER['HTTP_X_PERCOHUB'] ?? '') !== '1') {
+        http_response_code(403);
+        echo json_encode(['error' => 'requête refusée'], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    $in   = json_decode(file_get_contents('php://input'), true) ?: [];
+    $mac  = strtolower((string) ($in['mac'] ?? ''));
+    $name = trim(mb_substr((string) ($in['name'] ?? ''), 0, 60));
+    if (!preg_match('/^([0-9a-f]{2}:){5}[0-9a-f]{2}$/', $mac)) {
+        http_response_code(400);
+        echo json_encode(['error' => 'adresse MAC invalide'], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    $names = json_decode((string) @file_get_contents('/data/names.json'), true) ?: [];
+    if ($name === '') unset($names[$mac]); else $names[$mac] = $name;
+    $ok = file_put_contents('/data/names.json', json_encode($names, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT), LOCK_EX) !== false;
+    echo json_encode(['ok' => $ok], JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+echo json_encode(['error' => 'action invalide. Utilisez: all, status, config, docker, control, network'], JSON_UNESCAPED_UNICODE);

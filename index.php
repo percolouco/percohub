@@ -46,6 +46,8 @@
         <span class="text-gray-500">—</span>
       </div>
 
+      <a href="/reseau.php" class="text-sm text-gray-400 hover:text-white border border-[#30363d] rounded px-2 py-1" title="Appareils du réseau">🌐 Réseau</a>
+
       <!-- Refresh -->
       <div class="flex items-center gap-2">
         <span id="refresh-timer" class="text-xs text-gray-600">—</span>
